@@ -1,5 +1,5 @@
-Here you can say lots of fun things about your site.
+**Hello World!** 
 
-Maybe say a some things about yourself.
+My name is Isha Terdal, and I am a data engineer turned technical writer. 
 
-Or maybe what you plan to blog about.
+
