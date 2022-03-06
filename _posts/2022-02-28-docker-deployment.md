@@ -3,6 +3,8 @@
 ## TLDR
 This is a guide on how to deploy a Streamlit app via Docker container
 
+![Docker Demo](/images/docker_demo.jpeg)
+
 ## Outline
 - Introduction
 - Streamlit
