@@ -1,5 +1,8 @@
 # Deploying a Streamlit App on Docker
 
+## TLDR
+This is a guide on how to deploy a Streamlit app via Docker container
+
 ## Outline
 - Introduction
 - Streamlit
