@@ -3,7 +3,7 @@
 ## TLDR
 This is a guide on how to deploy a Streamlit app via Docker container
 
-![Docker Demo](/images/docker_demo.jpeg)
+![Docker Demo](images/docker_demo.jpeg)
 
 ## Outline
 - Introduction
@@ -32,7 +32,7 @@ Some of the user interface elements that Streamlit provides include dropdown men
 
  Ref: https://streamlit.io/
 
-A detailed guide for basic Streamlit functions can be found in this article.
+A detailed guide for basic Streamlit functions can be found in [this article](https://www.geeksforgeeks.org/a-beginners-guide-to-streamlit/).
 
 Once you have an interactive front-end web interface for general users to interact with, there are multiple ways of sharing the ML application with the world. The easiest and quickest method to do this would be to use Streamlit Sharing - a service that connects to your publicly accessible Streamlit code on Github and makes the application available via a shareable link.
 
@@ -75,13 +75,13 @@ Here is an example of how a NER app works:
 
 spaCy is an advanced open-source NLP library that is commonly used in information extraction tasks. It offers a set of functionalities such as named entity recognition and parts-of-speech tagging that makes it a popular NLP library among data scientists. 
 
-In this demo, we will be using the ‘en_core_web_sm’ statistical model within the spaCy library which is a Convolutional Neural Network (CNN) trained to identify components of the English language. Further information on the spaCy statistical models can be found in the spaCy documentation.
+In this demo, we will be using the ‘en_core_web_sm’ statistical model within the spaCy library which is a Convolutional Neural Network (CNN) trained to identify components of the English language. Further information on the spaCy statistical models can be found in the [spaCy documentation](https://spacy.io/models/en).
 
 
 ### Installing Docker
 Docker Desktop provides a user-friendly interface to start working with Docker.
 
-Download Docker Desktop: https://www.docker.com/products/docker-desktop
+Download [Docker Desktop](https://www.docker.com/products/docker-desktop)
 Sign in to Docker Desktop 
 
 
@@ -106,13 +106,14 @@ Building a Docker Image
 Keep Docker Desktop open and signed in
 Within the Command Line Interface (CLI), navigate inside the project directory using cd
 In this case, the project directory is in Documents folder which leads to the command: 
+
 ```cd Documents/named_entity_recognition```
 
 **Note**
 Docker requires the project folder to be completely in lowercase letters and/or underscores. It is important to ensure the name is in lowercase before building the app in the next step.
 
 Build a Docker image for the NER app with the command:
-docker build -f Dockerfile -t named_entity_recognition:latest .   
+```docker build -f Dockerfile -t named_entity_recognition:latest .```   
 
 The -f  flag is used to specify the name of the Dockerfile to be used for building the image
 The -t  flag is used to name and/or tag the image. In this case, we are tagging the Docker image with the ‘latest’ tag
@@ -132,7 +133,7 @@ The image will appear in Docker Desktop:
 
 4) To ensure the image has been built correctly, we can run the application from the Docker container with the command:
 
-docker run -p 8501:8501 named_entity_recognition:latest
+```docker run -p 8501:8501 named_entity_recognition:latest```
 
 The -p  flag is used to map the container’s port to the host port i.e. Port 8501
 
@@ -160,8 +161,7 @@ Login to Docker Hub with the account you created earlier and create a new reposi
 
 
 Tag the locally built image to the empty repository
-
-	docker tag named_entity_recognition ishaterdal/streamlit_app_docker
+```docker tag named_entity_recognition ishaterdal/streamlit_app_docker```
 
 
 Push the Docker image into the Hub repository
@@ -176,10 +176,11 @@ This is what the Docker image looks like on Docker Hub:
 At this point, your ML model has been created, wrapped in Streamlit for a user-friendly interface, and stored on Docker Hub registry for any individual or organization to access. Let us now see how anyone can pull the image from Docker Hub registry and start working with it.
 
 Pull Image from Docker Hub onto local machine
-docker pull ishaterdal/streamlit_app_docker
+```docker pull ishaterdal/streamlit_app_docker```
 
 Run Docker Container locally with the same command as above
 `docker run -p 8501:8501 ishaterdal/streamlit_app_docker`
+
 Open a browser and go to localhost:8501 to run the app on any machine
 
 
@@ -190,7 +191,7 @@ Here is how the deployment looks like:
 
 
 ### Conclusion
-This is how you can share your ML application wrapped in Streamlit using Docker. Docker containers are a common way of deploying ML applications built for various business purposes. Happy Sharing!
+This is how you can share your Streamlit application using Docker. Docker containers are a common way of deploying Streamlit applications built for various business purposes. Happy Sharing!
 
 
 
